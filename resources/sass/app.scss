@@ -1,2 +1,16 @@
 //
 @import "~bootstrap/scss/bootstrap";
+
+main{
+    height: calc(100vh - 82px);
+    a{
+        text-decoration: none;
+        color: lightsalmon;
+        &:hover{
+            color: green;
+        }
+    }
+}
+footer{
+    border-top: 2px solid white;
+}

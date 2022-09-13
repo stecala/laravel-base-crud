@@ -10,7 +10,7 @@
 </head>
 <body>
     @include('include.header')
-    <main>
+    <main class="bg-success">
         @yield('main_content')
     </main>
     @include('include.footer')

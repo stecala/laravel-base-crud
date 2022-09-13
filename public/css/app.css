@@ -10855,3 +10855,17 @@ textarea.form-control-lg {
     display: none !important;
   }
 }
+main {
+  height: calc(100vh - 82px);
+}
+main a {
+  text-decoration: none;
+  color: lightsalmon;
+}
+main a:hover {
+  color: green;
+}
+
+footer {
+  border-top: 2px solid white;
+}
