@@ -10,7 +10,7 @@
 </head>
 <body>
     @include('include.header')
-    <main class="bg-success">
+    <main class="bg-success py-5">
         @yield('main_content')
     </main>
     @include('include.footer')

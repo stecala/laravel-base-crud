@@ -10,6 +10,21 @@ main{
             color: green;
         }
     }
+    .comic-container{
+        border-radius: 10px;
+        background-color: blanchedalmond;
+        box-shadow: 10px 10px 10px rgba(65, 65, 65, 0.795);
+        padding: 25px 10px;
+        img{
+            border-radius: 5px;
+            box-shadow: 3px 3px 3px black;
+            margin-left: 50px;
+            transition: 0.5s ease;
+            &:hover{
+                transform: scale(1.1);
+            }
+        }
+    }
 }
 footer{
     border-top: 2px solid white;
