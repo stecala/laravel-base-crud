@@ -10856,7 +10856,7 @@ textarea.form-control-lg {
   }
 }
 main {
-  height: calc(100vh - 82px);
+  min-height: calc(100vh - 82px);
 }
 main a {
   text-decoration: none;

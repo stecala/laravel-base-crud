@@ -12,7 +12,7 @@
 		<tr>
 			<th scope="col">#</th>
 			<th scope="col">Title</th>
-			
+			<th></th>
 		</tr>
 		</thead>
 		<tbody>
@@ -32,6 +32,9 @@
 								{{ $comic->price }}€
 							</div>
 						</div>
+					</td>
+					<td>
+						<a href="{{ route('comics.edit' , $comic->id) }}" class="btn btn-success border">Modifica</a>
 					</td>
 				</tr>
 			@empty
