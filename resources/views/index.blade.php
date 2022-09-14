@@ -3,8 +3,10 @@
 @section('title' , 'Home')
 
 @section('main_content')
-<div class="container-lg d-flex align-items-center h-100">
-
+<div class="container-lg  h-100">
+		<a href="{{ route('comics.create') }}" class="btn btn-success border mb-3">
+			Aggiungi
+		</a>
 	<table class="table table-dark">
 		<thead>
 		<tr>
