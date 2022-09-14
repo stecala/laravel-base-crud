@@ -10872,9 +10872,9 @@ main .comic-container {
   padding: 25px 10px;
 }
 main .comic-container img {
+  width: 100%;
   border-radius: 5px;
   box-shadow: 3px 3px 3px black;
-  margin-left: 50px;
   transition: 0.5s ease;
 }
 main .comic-container img:hover {

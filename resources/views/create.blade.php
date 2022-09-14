@@ -30,7 +30,7 @@
         </div>
         <div class="form-group mt-2">
             <label for="sale_date">Data di pubblicazione</label>
-            <input type="sale_date" class="form-control" id="sale_date" name="sale_date" required>
+            <input type="date" class="form-control" id="sale_date" name="sale_date" required>
         </div>
         <div class="form-group mt-2">
             <label for="type">Genere</label>

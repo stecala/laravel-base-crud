@@ -9,7 +9,7 @@
                 <h3>{{ $comic->title }}</h3>
             </div>
             <div class="col-3">
-                <img src="{{ $comic->thumb }}" alt="">
+                <img src="{{ $comic->thumb }}" alt="{{ $comic->title }}">
             </div>
             <div class="col-9">
                 <div class="row">
