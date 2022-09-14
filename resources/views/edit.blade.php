@@ -4,7 +4,7 @@
 
 @section('main_content')
 <div class="container-lg  h-100 text-white">
-    <form action="{{ route('comics.store')}}" method="POST">
+    <form action="#" method="POST">
         @csrf
         <div class="form-group">
           <label for="title">Titolo</label>
@@ -13,7 +13,7 @@
         <div class="form-group mt-2">
           <label for="description">Descrizione</label>
           <div class="form-floating">
-            <textarea class="form-control" id="description" style="height: 100px" name="description" required value="{{ $comic->description }}"></textarea>
+            <textarea class="form-control" id="description" style="height: 100px" name="description" required>{{ $comic->description }}</textarea>
           </div>
         </div>
         <div class="form-group mt-2">
@@ -36,7 +36,7 @@
             <label for="type">Genere</label>
             <input type="text" class="form-control" id="type" placeholder="Inserisci serie"  name="type" required value="{{ $comic->type }}">
         </div>
-        <input type="submit" class="btn btn-success border mt-2" value="Aggiungi">
+        <input type="submit" class="btn btn-success border mt-2" value="Modifica">
     </form>
     
 </div>
