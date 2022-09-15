@@ -4,8 +4,9 @@
 
 @section('main_content')
 <div class="container-lg  h-100 text-white">
-    <form action="#" method="POST">
+    <form action="{{ route( 'comics.update', $comic->id)}}" method="POST">
         @csrf
+        @method('PUT')
         <div class="form-group">
           <label for="title">Titolo</label>
           <input type="text" class="form-control" id="title" placeholder="Digita il titolo" name="title" required value="{{ $comic->title }}">
