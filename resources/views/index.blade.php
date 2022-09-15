@@ -67,15 +67,11 @@
 
 @section('footer-script')
 <script>
-	const deleteFormElements = document.querySelectorAll('.delete-form');
-	deleteFormElements.forEach(formElement =>{
-		//aggiungo un event listener che ascolta per l'evento di submit
+	const deleteElements = document.querySelectorAll('.delete-form');
+	deleteElements.forEach(formElement =>{
 		formElement.addEventListener('submit', function(event){
-			// ne catturo il funzionamento per non far partire la submit
-			event.preventDefault(); //blocchiamo l'esecuzione automatica dell'evento
-			//chiedo conferma all'utente
+			event.preventDefault();
 			const result =window.confirm('Sei sicuro?')
-			//se l'utente risponde in mainera affermativa
 			if(result) this.submit();
 		})
 	})

@@ -36,7 +36,7 @@
                         {{ $comic->price }}€
                     </div>
                     <div>
-                        <form action="{{ route('comics.destroy' , $comic->id) }}"  method="POST">
+                        <form action="{{ route('comics.destroy' , $comic->id) }}"  method="POST" class="delete-form"> 
 							@csrf
 							@method('delete')
 							<input type="submit" class="btn btn-danger border" value="Elimina">
@@ -46,4 +46,16 @@
             </div>
         </div>
    </div>
+@endsection
+@section('footer-script')
+<script>
+	const deleteElements = document.querySelectorAll('.delete-form');
+	deleteElements.forEach(formElement =>{
+		formElement.addEventListener('submit', function(event){
+			event.preventDefault();
+			const result =window.confirm('Sei sicuro?')
+			if(result) this.submit();
+		})
+	})
+</script>
 @endsection
