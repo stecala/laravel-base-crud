@@ -4,7 +4,12 @@
 
 @section('main_content')
 <div class="container-lg  h-100">
-		<a href="{{ route('comics.create') }}" class="btn btn-success border mb-3">
+	@if(session('delete'))
+	<div class="pop-up-delete p-4">
+		{{session('delete')}} è stato eliminato
+	</div>
+	@endif
+		<a href="{{ route('comics.create') }}" class="btn btn-success border my-3">
 			Aggiungi
 		</a>
 	<table class="table table-dark">
@@ -12,6 +17,7 @@
 		<tr>
 			<th scope="col">#</th>
 			<th scope="col">Title</th>
+			<th></th>
 			<th></th>
 		</tr>
 		</thead>
@@ -35,6 +41,13 @@
 					</td>
 					<td>
 						<a href="{{ route('comics.edit' , $comic->id) }}" class="btn btn-success border">Modifica</a>
+					</td>
+					<td>
+						<form action="{{ route('comics.destroy' , $comic->id) }}"  method="POST">
+							@csrf
+							@method('delete')
+							<input type="submit" class="btn btn-danger border" value="Elimina">
+						</form>
 					</td>
 				</tr>
 			@empty

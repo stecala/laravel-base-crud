@@ -10880,6 +10880,13 @@ main .comic-container img {
 main .comic-container img:hover {
   transform: scale(1.1);
 }
+main .pop-up-delete {
+  background-color: rgb(250, 165, 165);
+  color: red;
+  font-size: 1.3rem;
+  font-weight: 500;
+  border-radius: 5px;
+}
 
 footer {
   border-top: 2px solid white;

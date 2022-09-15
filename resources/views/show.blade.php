@@ -35,6 +35,13 @@
                         </h5>
                         {{ $comic->price }}€
                     </div>
+                    <div>
+                        <form action="{{ route('comics.destroy' , $comic->id) }}"  method="POST">
+							@csrf
+							@method('delete')
+							<input type="submit" class="btn btn-danger border" value="Elimina">
+						</form>
+                    </div>
                 </div>
             </div>
         </div>
