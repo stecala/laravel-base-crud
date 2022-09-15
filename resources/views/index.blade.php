@@ -43,7 +43,7 @@
 						<a href="{{ route('comics.edit' , $comic->id) }}" class="btn btn-success border">Modifica</a>
 					</td>
 					<td>
-						<form action="{{ route('comics.destroy' , $comic->id) }}"  method="POST">
+						<form action="{{ route('comics.destroy' , $comic->id) }}"  method="POST" class="delete-form">
 							@csrf
 							@method('delete')
 							<input type="submit" class="btn btn-danger border" value="Elimina">
@@ -63,4 +63,21 @@
 </div>
 
 
+@endsection
+
+@section('footer-script')
+<script>
+	const deleteFormElements = document.querySelectorAll('.delete-form');
+	deleteFormElements.forEach(formElement =>{
+		//aggiungo un event listener che ascolta per l'evento di submit
+		formElement.addEventListener('submit', function(event){
+			// ne catturo il funzionamento per non far partire la submit
+			event.preventDefault(); //blocchiamo l'esecuzione automatica dell'evento
+			//chiedo conferma all'utente
+			const result =window.confirm('Sei sicuro?')
+			//se l'utente risponde in mainera affermativa
+			if(result) this.submit();
+		})
+	})
+</script>
 @endsection

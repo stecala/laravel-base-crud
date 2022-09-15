@@ -14,5 +14,7 @@
         @yield('main_content')
     </main>
     @include('include.footer')
+
+    @yield('footer-script')
 </body>
 </html>
