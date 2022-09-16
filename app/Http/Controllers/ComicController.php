@@ -9,7 +9,7 @@ class ComicController extends Controller
 {
 
      protected $validationData = [
-        'title'=>'required|unique:comics|min:3',
+        'title' => 'required|min:3',
         'description' => 'required|min:10',
         'thumb' => 'required|active_url',
         'price' => 'required',
