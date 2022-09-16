@@ -7,6 +7,17 @@ use Illuminate\Http\Request;
 
 class ComicController extends Controller
 {
+
+     protected $validationData = [
+        'title'=>'required|unique:comics|min:3',
+        'description' => 'required|min:10',
+        'thumb' => 'required|active_url',
+        'price' => 'required',
+        'series' => 'required',
+        'sale_date' => 'required|date|after:1900/01/01',
+        'type'=> 'required',
+    ];
+
     /**
      * Display a listing of the resource.
      *
@@ -39,7 +50,12 @@ class ComicController extends Controller
     public function store(Request $request)
     {
         //
+
+
         $comic=$request->all();
+
+        $validatedComicRule=$request->validate($this->validationData);
+
         $newComic = new Comic();
         $newComic->title = $comic['title'];
         $newComic->description = $comic['description'];
