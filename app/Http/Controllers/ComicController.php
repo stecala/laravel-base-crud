@@ -53,9 +53,8 @@ class ComicController extends Controller
         //
 
 
-        $comic=$request->all();
+        $comic=$request->validate($this->validationData);
 
-        $validatedComicRule=$request->validate($this->validationData);
 
         $newComic = new Comic();
         $newComic->title = $comic['title'];
@@ -106,11 +105,10 @@ class ComicController extends Controller
     public function update(Request $request, $id)
     {
         //
-        $newComic=$request->all();
+        $newComic=$request->validate($this->validationData);
 
         $comic = Comic::findOrFail($id);
 
-        $validatedComicRule=$request->validate($this->validationData);
         
         $comic->update($newComic);
 
