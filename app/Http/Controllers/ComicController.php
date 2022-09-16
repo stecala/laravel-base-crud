@@ -107,7 +107,11 @@ class ComicController extends Controller
     {
         //
         $newComic=$request->all();
+
         $comic = Comic::findOrFail($id);
+
+        $validatedComicRule=$request->validate($this->validationData);
+        
         $comic->update($newComic);
 
         return redirect()->route('comics.show', $comic->id); //<-ti riporta allo show
